@@ -1,0 +1,335 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: #8B4D8B;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 0; 
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #6B3D6B;
+    flex: 1; 
+}
+
+button:hover {
+    background-color: #A05FA0;
+}
+
+.btn-group {
+    border-radius: 0;
+}
+
+.d-flex {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block; 
+    margin: 0;
+    padding: 0;
+}
+.img-blur {
+    filter: blur(15px); 
+}
+
+
+.login-container {
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #8B4D8B;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #8B4D8B;
+    margin-bottom: 30px;
+}
+
+.login-page {
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+
+.btn-login:hover {
+    background-color: #A05FA0;
+}
+
+.login-container a {
+    color: #8B4D8B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.login-container label {
+    color: #333;
+    margin-left: 5px;
+}
+
+.login-container input[type="radio"] {
+    cursor: pointer;
+}
+
+.quem-somos-page {
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+}
+
+.quem-somos-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.quem-somos-container {
+    max-width: 700px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #8B4D8B;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-container h2 {
+    text-align: center;
+    color: #8B4D8B;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.quem-somos-container p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.quem-somos-container strong {
+    color: #8B4D8B;
+}
+
+
+.contato-page {
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+}
+
+.contato-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.contato-container {
+    max-width: 600px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #8B4D8B;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.contato-container h2 {
+    text-align: center;
+    color: #8B4D8B;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.contato-info p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.contato-info strong {
+    color: #8B4D8B;
+    font-size: 18px;
+}
+
+.cases-page {
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+}
+
+.cases-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('institucional.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.cases-container {
+    max-width: 900px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #8B4D8B;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.cases-container h2 {
+    text-align: center;
+    color: #8B4D8B;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.cases-container .intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.case-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #ddd;
+}
+
+.case-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.case-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid #8B4D8B;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+.case-content h3 {
+    color: #8B4D8B;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.case-content p {
+    color: #333;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.menu-btn {
+    background-color: #8B4D8B;
+    color: white;
+    padding: 15px;
+    border: 1px solid #6B3D6B;
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.menu-btn:hover {
+    background-color: #A05FA0;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-btn.active {
+    background-color: #6B3D6B;
+    border-color: #512D51;
+    font-weight: bold;
+}
