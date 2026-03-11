@@ -1,12 +1,13 @@
 <?php
 
-$host = 'localhost';
+$host = '127.0.0.1';  
+$port = '3306';
 $user = 'root';
-$pass = ''; 
+$pass = '';           
 $dbname = 'agendai_db';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+$dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -17,5 +18,6 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
+
     die("Erro ao conectar no banco de dados.");
 }

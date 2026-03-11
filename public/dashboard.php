@@ -27,21 +27,18 @@ include __DIR__ . '/../app/includes/flash.php';
             <div class="card shadow-sm p-3">
                 <h4>Área do Cliente</h4>
                 <p class="mb-2">
-                    Aqui você pode gerenciar seus dados de perfil. Em um sistema real, o cliente também poderia
-                    visualizar e solicitar agendamentos.
+                    Como cliente, você pode visualizar os serviços cadastrados pelos prestadores e administradores,
+                    além de gerenciar seus dados de perfil.
                 </p>
-                <a class="btn btn-primary" href="perfil.php">Ir para Meu Perfil</a>
+                <a class="btn btn-success" href="itens/index.php">Ver Serviços</a>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="card shadow-sm p-3">
-                <h4>O que este sistema demonstra</h4>
-                <ul class="mb-0">
-                    <li>Login/Registro com sessão</li>
-                    <li>Integração com banco MySQL usando PDO</li>
-                    <li>Controle de acesso por perfil</li>
-                </ul>
+                <h4>Meu Perfil</h4>
+                <p class="mb-2">Atualize seu e-mail ou exclua sua conta.</p>
+                <a class="btn btn-primary" href="perfil.php">Ir para Meu Perfil</a>
             </div>
         </div>
 
@@ -50,8 +47,8 @@ include __DIR__ . '/../app/includes/flash.php';
             <div class="card shadow-sm p-3">
                 <h4>Área do Prestador</h4>
                 <p class="mb-2">
-                    Cadastre e gerencie seus <strong>serviços</strong> (nome, descrição e preço). Em um caso real, esses serviços
-                    ficariam disponíveis para clientes.
+                    Cadastre e gerencie seus <strong>serviços</strong> (nome, descrição e preço).
+                    Esses serviços ficam visíveis para os clientes no sistema.
                 </p>
                 <a class="btn btn-success" href="itens/index.php">Gerenciar Serviços</a>
             </div>
@@ -76,9 +73,9 @@ include __DIR__ . '/../app/includes/flash.php';
 
         <div class="col-md-4">
             <div class="card shadow-sm p-3">
-                <h4>Serviços (Prestadores)</h4>
-                <p class="mb-2">Admin também pode acessar a área de serviços.</p>
-                <a class="btn btn-success" href="itens/index.php">Ver Serviços</a>
+                <h4>Serviços</h4>
+                <p class="mb-2">Admin também pode cadastrar e gerenciar serviços.</p>
+                <a class="btn btn-success" href="itens/index.php">Gerenciar Serviços</a>
             </div>
         </div>
 

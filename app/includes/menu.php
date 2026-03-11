@@ -29,9 +29,7 @@ function is_active(array $names, string $current): string {
 
             <a class="menu-btn<?php echo is_active(['perfil.php'], $current); ?>" href="<?php echo $PUBLIC_URL; ?>/perfil.php">Meu Perfil</a>
 
-            <?php if ($tipo === 'prestador' || $tipo === 'admin'): ?>
-                <a class="menu-btn<?php echo is_active(['index.php','novo.php','editar.php'], $current); ?>" href="<?php echo $PUBLIC_URL; ?>/itens/index.php">Serviços</a>
-            <?php endif; ?>
+            <a class="menu-btn<?php echo is_active(['index.php','novo.php','editar.php'], $current); ?>" href="<?php echo $PUBLIC_URL; ?>/itens/index.php">Serviços</a>
 
             <?php if ($tipo === 'admin'): ?>
                 <a class="menu-btn<?php echo is_active(['usuarios.php'], $current); ?>" href="<?php echo $PUBLIC_URL; ?>/admin/usuarios.php">Usuários</a>
