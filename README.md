@@ -1,93 +1,133 @@
 # AgendAI
 
-O **AgendAI** é um sistema web simples desenvolvido em **PHP e MySQL** que permite o cadastro de usuários e o gerenciamento de serviços cadastrados por prestadores.
+Projeto final da disciplina de Desenvolvimento Web 1.
 
-O objetivo do sistema é simular uma plataforma onde prestadores podem cadastrar serviços e clientes podem visualizar esses serviços disponíveis.
-
-Este projeto foi desenvolvido como **trabalho final da disciplina de Desenvolvimento Web 1**.
+O **AgendAí** é um sistema web desenvolvido em PHP com banco de dados MySQL, com foco em cadastro de usuários, autenticação, controle de acesso por perfil e gerenciamento de serviços. O sistema foi pensado para simular uma plataforma simples de agendamentos, com área pública e área privada, seguindo os requisitos propostos no trabalho.
 
 ---
 
-# Tecnologias utilizadas
+## Objetivo do Projeto
 
-Para desenvolver o sistema foram utilizadas as seguintes tecnologias:
+O objetivo deste projeto foi desenvolver um sistema/website com:
 
-- PHP
-- MySQL
-- HTML
-- CSS
-- Bootstrap
-- PDO para conexão com o banco de dados
-- XAMPP para ambiente de desenvolvimento
-
----
-
-# Funcionalidades do sistema
-
-O sistema possui algumas funcionalidades básicas de autenticação e gerenciamento de dados.
-
-## Cadastro de usuários
-
-Um novo usuário pode criar uma conta informando:
-
-- Email
-- Senha
-- Tipo de usuário
-
-Os tipos disponíveis são:
-
-- Cliente
-- Prestador
-- **Temos o Usuario ADMIN, apenas 1 conta fixa**
-
-Após o cadastro, o usuário já pode realizar login no sistema.
+- área pública acessível sem login;
+- área privada acessível apenas após autenticação;
+- diferentes perfis de usuário com permissões específicas;
+- operações de cadastro, edição, exclusão e listagem;
+- integração com banco de dados;
+- organização do código em camadas e arquivos separados;
+- implementação de uma chamada assíncrona AJAX para pontuação extra.
 
 ---
 
-## Login
+## Área Pública
 
-O sistema possui uma tela de login onde o usuário informa seu email e senha.
+A área pública pode ser acessada sem a necessidade de login e possui as seguintes páginas:
 
-A senha é armazenada no banco utilizando **hash de segurança** com `password_hash()`.
-
-Após o login, o sistema identifica o perfil do usuário e libera as funcionalidades permitidas para aquele tipo de conta.
-
----
-
-# Perfis de usuário
-
-O sistema possui três perfis diferentes.
-
-## Cliente
-
-O cliente pode:
-
-- acessar o sistema
-- visualizar os serviços cadastrados pelos prestadores
-- visualizar qual usuário cadastrou cada serviço
-- acessar e atualizar seu perfil
-
-O cliente **não pode criar, editar ou excluir serviços**.
+- **Home**: apresentação do sistema e seus objetivos;
+- **Quem Somos**: informações institucionais;
+- **Casos de Uso**: exemplos fictícios de utilização do sistema;
+- **Contato**: informações de contato;
+- **Login**: autenticação de usuários;
+- **Registro**: cadastro de novos usuários.
 
 ---
 
-## Prestador
+## Área Privada
 
-O prestador pode:
-
-- cadastrar novos serviços
-- editar seus próprios serviços
-- excluir serviços que ele cadastrou
-- visualizar os serviços cadastrados
-
-Os serviços cadastrados por um prestador ficam disponíveis para visualização dos clientes.
+A área privada do sistema é acessível apenas para usuários autenticados e possui funcionalidades diferentes de acordo com o perfil do usuário.
 
 ---
 
-## Administrador
+## Perfis de Usuário e Funcionalidades
 
-O administrador possui as mesmas permissões do prestador, além de ter acesso à área de gerenciamento de usuários.
+### Usuário Cliente
 
-Ele pode visualizar os usuários cadastrados no sistema.
+O usuário com perfil **Cliente** possui as seguintes funcionalidades:
+
+- acessar sua conta no sistema;
+- visualizar e editar o próprio perfil;
+- excluir a própria conta;
+- visualizar os serviços cadastrados por usuários dos tipos **Prestador** e **Admin**;
+- não pode cadastrar, editar ou excluir serviços.
 
 ---
+
+### Usuário Prestador
+
+O usuário com perfil **Prestador** possui as seguintes funcionalidades:
+
+- acessar sua conta no sistema;
+- visualizar e editar o próprio perfil;
+- excluir a própria conta;
+- cadastrar novos serviços;
+- editar serviços cadastrados por ele mesmo;
+- excluir serviços cadastrados por ele mesmo;
+- visualizar apenas os seus próprios serviços.
+
+---
+
+### Usuário Admin
+
+O usuário com perfil **Admin** possui as seguintes funcionalidades:
+
+- possui as mesmas permissões do usuário **Prestador**;
+- pode cadastrar, editar, excluir e visualizar os próprios serviços;
+- pode acessar sua conta, editar perfil e excluir a própria conta;
+- possui uma funcionalidade exclusiva de admin;
+- pode visualizar todos os usuários cadastrados no sistema;
+- pode excluir contas de usuários, quando necessário;
+- não pode excluir contas de outros usuários do tipo **Admin**.
+
+---
+
+## Chamada Assíncrona AJAX
+
+Como funcionalidade extra, foi implementada uma **chamada assíncrona AJAX usando `fetch()` em JS**.
+
+### O que foi feito:
+Foi criada uma exclusão assíncrona de serviços, onde:
+
+- a requisição é enviada sem recarregar a página;
+- o backend em PHP processa a ação;
+- a resposta é retornada em **JSON**;
+- o serviço é removido da tabela;
+- a página continua aberta, sem necessidade de reload.
+
+---
+
+## Funcionalidades Implementadas
+
+O sistema contempla as seguintes funcionalidades principais:
+
+- cadastro de usuário;
+- login com autenticação;
+- logout do sistema;
+- controle de acesso por perfil;
+- edição de perfil;
+- exclusão da própria conta;
+- cadastro de serviços;
+- edição de serviços;
+- exclusão de serviços;
+- listagem de serviços;
+- listagem de usuários para administrador;
+- exclusão de usuários por administrador;
+- chamada assíncrona AJAX com `fetch()` para exclusão de serviços.
+
+---
+
+## Tecnologias Utilizadas
+
+Este projeto foi desenvolvido utilizando:
+
+- **PHP**
+- **MySQL**
+- **PDO**
+- **HTML5**
+- **CSS3**
+- **Bootstrap**
+- **JavaScript**
+- **AJAX com fetch()**
+- **XAMPP** para ambiente local
+- **InfinityFree** para hospedagem
+- **Git e GitHub** para versionamento
