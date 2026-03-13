@@ -49,6 +49,8 @@ include __DIR__ . '/../../app/includes/header.php';
 include __DIR__ . '/../../app/includes/flash.php';
 ?>
 
+<div id="mensagem-ajax"></div>
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
         <h2 class="mb-0">Serviços</h2>
@@ -110,7 +112,7 @@ include __DIR__ . '/../../app/includes/flash.php';
                         <td>
                             <a class="btn btn-primary btn-sm" href="editar.php?id=<?php echo (int)$s['id']; ?>">Editar</a>
 
-                            <form method="post" action="/agendai/app/actions/item_delete.php" style="display:inline;">
+                            <form class="form-excluir-servico d-inline" data-id="<?php echo (int)$s['id']; ?>">
                                 <input type="hidden" name="id" value="<?php echo (int)$s['id']; ?>">
                                 <button class="btn btn-danger btn-sm" type="submit">Excluir</button>
                             </form>
@@ -122,5 +124,56 @@ include __DIR__ . '/../../app/includes/flash.php';
         </table>
     </div>
 <?php endif; ?>
+
+<script>
+document.querySelectorAll('.form-excluir-servico').forEach((form) => {
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const confirmar = confirm('Deseja realmente excluir este serviço?');
+        if (!confirmar) return;
+
+        const formData = new FormData(form);
+        const linha = form.closest('tr');
+        const mensagem = document.getElementById('mensagem-ajax');
+
+        try {
+            const response = await fetch('/agendai/app/actions/item_delete.php', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                if (linha) {
+                    linha.remove();
+                }
+
+                mensagem.innerHTML = `
+                    <div class="alert alert-success">
+                        ${data.message}
+                    </div>
+                `;
+            } else {
+                mensagem.innerHTML = `
+                    <div class="alert alert-danger">
+                        ${data.message}
+                    </div>
+                `;
+            }
+        } catch (error) {
+            mensagem.innerHTML = `
+                <div class="alert alert-danger">
+                    Erro ao excluir o serviço.
+                </div>
+            `;
+        }
+    });
+});
+</script>
 
 <?php include __DIR__ . '/../../app/includes/footer.php'; ?>
